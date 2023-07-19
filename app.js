@@ -76,13 +76,13 @@ class BinarySearchTree {
                 let node = queue.shift();
 
                 if (node === null) {
-                    createSpan(" ", count)
+                    createInnerDiv(" ", count)
                     queue.push(null);
                     queue.push(null);
                     continue;
                 }
-                
-                createSpan(node.data, count)
+
+                createInnerDiv(node.data, count)
                 queue.push(node.left);
                 queue.push(node.right);
             }
@@ -90,10 +90,10 @@ class BinarySearchTree {
     }
 };
 
-function createSpan(data, level) {
+function createInnerDiv(data, level) {
 
     let currentDiv = document.getElementsByClassName(level)[0];
-    let newSpan = document.createElement('span');
+    let newSpan = document.createElement('div');
     newSpan.innerHTML = data;
     currentDiv.appendChild(newSpan);
 
